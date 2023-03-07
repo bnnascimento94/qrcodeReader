@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">QrcodeReader</string>
+    <string name="leitor_qrcode">Leitor de Qrcode</string>
+</resources>
