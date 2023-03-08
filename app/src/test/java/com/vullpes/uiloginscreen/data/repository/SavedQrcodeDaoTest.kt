@@ -51,7 +51,7 @@ class SavedQrcodeDaoTest {
     @Test
     fun `test updating qrcode`() = runBlocking {
         var qrcodeSaved: SavedQrcode? = SavedQrcode(null,"123456")
-        val id: Long? = savedQrcodeDao.insert(qrcodeSaved!!)
+        val id: Int? = savedQrcodeDao.insert(qrcodeSaved!!)
 
         id?.let {
             qrcodeSaved = savedQrcodeDao.selectQrcodeById(it)
@@ -68,7 +68,7 @@ class SavedQrcodeDaoTest {
     @Test
     fun `delete a qrcode saved when given an ID`(){
         var qrcodeSaved: SavedQrcode? = SavedQrcode(null,"123456")
-        val id: Long? = savedQrcodeDao.insert(qrcodeSaved!!)
+        val id: Int? = savedQrcodeDao.insert(qrcodeSaved!!)
 
         savedQrcodeDao.deleteQrcodeById(id!!)
 
@@ -80,7 +80,7 @@ class SavedQrcodeDaoTest {
     @Test
     fun `delete all qrcodes`(){
         var qrcodeSaved: SavedQrcode? = SavedQrcode(null,"123456")
-        val id: Long? = savedQrcodeDao.insert(qrcodeSaved!!)
+        val id: Int? = savedQrcodeDao.insert(qrcodeSaved!!)
 
         savedQrcodeDao.deleteAll()
 
