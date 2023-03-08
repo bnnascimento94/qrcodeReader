@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 interface SavedQrcodeDao {
 
     @Insert
-    fun insert(savedQrcode: SavedQrcode): Int?
+    fun insert(savedQrcode: SavedQrcode): Long?
 
     @Update
     fun update(savedQrcode: SavedQrcode)

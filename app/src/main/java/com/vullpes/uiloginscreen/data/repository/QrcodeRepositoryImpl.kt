@@ -11,7 +11,7 @@ class QrcodeRepositoryImpl @Inject constructor(private val savedQrcodeDao: Saved
     override suspend fun saveQrcode(qrcode: String): Resource<Boolean> {
         return try{
             val q = SavedQrcode(null,qrcode)
-            val id : Int? = savedQrcodeDao.insert(q)
+            val id : Int? = savedQrcodeDao.insert(q)?.toInt()
 
             if(id != null && id > 0 ){
                 Resource.Success(true)
